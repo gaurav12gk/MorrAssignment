@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(v -> {
+            checkexpiry();checkcvv();checkfirstname();checklastname();
           if(checkcardumber()&&checkcvv()&&checkfirstname()&&checklastname()&&checkexpiry())
           {
-              Toast.makeText(this, "fdf", Toast.LENGTH_SHORT).show();
-              MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(MainActivity.this)
+               MaterialAlertDialogBuilder builder=new MaterialAlertDialogBuilder(MainActivity.this)
                       .setTitle("Payment Successfull").setPositiveButton("OK", new DialogInterface.OnClickListener() {
                           @Override
                           public void onClick(DialogInterface dialog, int which) {
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             firstnamelayout.setError(null);
             return true;
         }
+
 
     }
 
